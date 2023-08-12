@@ -1,0 +1,54 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/aaron/Projects/CSharp/Games/TestDndMap/Test Dnd Map.csproj": {}
+  },
+  "projects": {
+    "/home/aaron/Projects/CSharp/Games/TestDndMap/Test Dnd Map.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/aaron/Projects/CSharp/Games/TestDndMap/Test Dnd Map.csproj",
+        "projectName": "Test Dnd Map",
+        "projectPath": "/home/aaron/Projects/CSharp/Games/TestDndMap/Test Dnd Map.csproj",
+        "packagesPath": "/home/aaron/.nuget/packages/",
+        "outputPath": "/home/aaron/Projects/CSharp/Games/TestDndMap/.mono/temp/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/aaron/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.xmltravelgate.com/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "targetAlias": "net472",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "targetAlias": "net472",
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

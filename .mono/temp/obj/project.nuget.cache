@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "XBVzj7AlhKzAVRdJ2i+OTR8G13QjuERj4ATKSgAqn7nF9WIMXPjr/S3dmowOAxblWkj771cFuQDAa8qMPFZE2A==",
+  "success": true,
+  "projectFilePath": "/home/aaron/Projects/CSharp/Games/TestDndMap/Test Dnd Map.csproj",
+  "expectedPackageFiles": [
+    "/home/aaron/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.3/microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
+    "/home/aaron/.nuget/packages/microsoft.netframework.referenceassemblies.net472/1.0.3/microsoft.netframework.referenceassemblies.net472.1.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

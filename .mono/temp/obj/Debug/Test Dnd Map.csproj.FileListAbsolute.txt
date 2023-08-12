@@ -1,0 +1,9 @@
+/home/aaron/Projects/CSharp/Games/TestDndMap/.mono/temp/obj/Debug/Test Dnd Map.csproj.AssemblyReference.cache
+/home/aaron/Projects/CSharp/Games/TestDndMap/.mono/temp/obj/Debug/Test Dnd Map.GeneratedMSBuildEditorConfig.editorconfig
+/home/aaron/Projects/CSharp/Games/TestDndMap/.mono/temp/obj/Debug/Test Dnd Map.AssemblyInfoInputs.cache
+/home/aaron/Projects/CSharp/Games/TestDndMap/.mono/temp/obj/Debug/Test Dnd Map.AssemblyInfo.cs
+/home/aaron/Projects/CSharp/Games/TestDndMap/.mono/temp/obj/Debug/Test Dnd Map.csproj.CoreCompileInputs.cache
+/home/aaron/Projects/CSharp/Games/TestDndMap/.mono/temp/bin/Debug/Test Dnd Map.dll
+/home/aaron/Projects/CSharp/Games/TestDndMap/.mono/temp/bin/Debug/Test Dnd Map.pdb
+/home/aaron/Projects/CSharp/Games/TestDndMap/.mono/temp/obj/Debug/Test Dnd Map.dll
+/home/aaron/Projects/CSharp/Games/TestDndMap/.mono/temp/obj/Debug/Test Dnd Map.pdb
