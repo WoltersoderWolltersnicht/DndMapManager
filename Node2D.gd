@@ -1,63 +1,62 @@
 extends Node2D
 
-
-export var zoom_speed = 0.5
-export var min_scale = 0.5
-export var max_scale = 2.0
-
-var initial_distance = 0.0
-var initial_scale = Vector2(1, 1)
-
 var board = null
+var pices = Array()
 
 func _ready():
-	var boardScreen = preload("res://Board.tscn").instance()
-	add_child(boardScreen)
-	boardScreen.position = Vector2(120, 10)
-	board = boardScreen.get_node("Board")
-
-func _process(delta):
-	if Input.is_key_pressed(KEY_PLUS):
-		zoom_in()
-	elif Input.is_key_pressed(KEY_MINUS):
-		zoom_out()
-
-func _input(event):	
-	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_WHEEL_UP:
-			zoom_in()
-		elif event.button_index == BUTTON_WHEEL_DOWN:
-			zoom_out()
+	board = preload("res://Board.tscn").instantiate()
+	_add_Pice("res://img/Twick.png", Vector2(155, 45))
+	add_child(board)
+	board.position = Vector2(120, 10)
 	
-	if event is InputEventScreenTouch:
-		if event.is_pressed():
-			handle_touch(event)
-		else:
-			initial_distance = 0.0
-
-func zoom_in():
-	scale *= (1.0 + zoom_speed)
-
-func zoom_out():
-	scale /= (1.0 + zoom_speed)
-	
-func handle_touch(event):
-	if event.get_touch_count() == 2:
-		var touch1 = event.get_touch(0)
-		var touch2 = event.get_touch(1)
-		var distance = touch1.position.distance_to(touch2.position)
-
-		if initial_distance == 0.0:
-			initial_distance = distance
-			initial_scale = scale
-			return
-
-		var pinch_scale = initial_scale * (distance / initial_distance)
-		pinch_scale.x = clamp(pinch_scale.x, min_scale, max_scale)
-		pinch_scale.y = clamp(pinch_scale.y, min_scale, max_scale)
-		scale = pinch_scale
-
-
 func _on_HSlider_value_changed(value):
 	board._loadBoard(value)
-	pass # Replace with function body.
+	for pice in pices:
+		pice.scale = Vector2(value, value)
+
+func _on_Button3_pressed():
+	var file_dialog = FileDialog.new()
+	file_dialog.access = 2
+	file_dialog.connect("file_selected", Callable(self, "set_Image_Background"))
+	file_dialog.current_dir = OS.get_system_dir(6)
+	file_dialog.mode = FileDialog.FILE_MODE_OPEN_FILE
+	file_dialog.filters = ["*.png", "*.jpg"]
+	
+	add_child(file_dialog)
+	file_dialog.popup_centered()
+
+
+func _on_Button2_pressed():
+	var file_dialog = FileDialog.new()
+	file_dialog.access = 2
+	file_dialog.connect("file_selected", Callable(self, "_add_Pice"))
+	file_dialog.current_dir = OS.get_system_dir(6)
+	file_dialog.mode = FileDialog.FILE_MODE_OPEN_FILE
+	file_dialog.filters = ["*.png", "*.jpg"]
+	add_child(file_dialog)
+	file_dialog.popup_centered()
+
+func _add_Pice(path, pice_position = Vector2(-10, 10)):
+	var tile  = load("res://Tile.tscn").instantiate()
+	add_child(tile)
+	pices.append(tile)
+	tile.priority = pices.size()
+	tile.scale = Vector2(board.cell_scale, board.cell_scale)
+	tile.position = pice_position
+	tile.z_index = 10
+	tile._set_image(path)
+	tile.connect("input_event", Callable(get_node("Camera2D"), "_on_Tile_Event"))
+
+func set_Image_Background(path):
+	board.set_Image_Background(path)
+	
+	$CanvasLayer/Panel/VBoxContainer/OptionButton.clear()
+	for scale in board.valid_scales:
+		$CanvasLayer/Panel/VBoxContainer/OptionButton.add_item(str(scale))
+	
+
+func _on_option_button_item_selected(index):
+	var value = float($CanvasLayer/Panel/VBoxContainer/OptionButton.get_item_text(index))
+	board._loadBoard(value)
+	for pice in pices:
+		pice.scale = Vector2(value, value)

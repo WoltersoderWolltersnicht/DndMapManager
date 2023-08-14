@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmisd8ydy4h3k"
-path="res://.godot/imported/icon.png-785c773011bc951c4eb2a222382599fb.ctex"
+uid="uid://b5rums3gtk1pt"
+path="res://.godot/imported/Twick.png-24f3cdc927b1ce735cfe41eb3595c83a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/icon.png"
-dest_files=["res://.godot/imported/icon.png-785c773011bc951c4eb2a222382599fb.ctex"]
+source_file="res://img/Twick.png"
+dest_files=["res://.godot/imported/Twick.png-24f3cdc927b1ce735cfe41eb3595c83a.ctex"]
 
 [params]
 
