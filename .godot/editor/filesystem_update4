@@ -3,7 +3,4 @@ res://Node2D.tscn
 res://Menu.tscn
 res://Cell.tscn
 res://Tile.tscn
-res://Node2D.gd
 res://Board.tscn
-res://Board.gd
-res://Tile.gd

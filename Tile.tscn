@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://fuidu2cio10p"]
+[gd_scene load_steps=4 format=3 uid="uid://fuidu2cio10p"]
 
 [ext_resource type="Texture2D" uid="uid://b5rums3gtk1pt" path="res://img/Twick.png" id="1"]
 [ext_resource type="Script" path="res://Tile.gd" id="2"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_6suun"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/sync = true
+properties/0/watch = false
 
 [node name="DragableTile" type="Area2D"]
 script = ExtResource("2")
@@ -14,5 +20,8 @@ polygons = [PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(16, -29, 16, -28.9, 29, -17.9, 29, -15.5, 32, -10.2, 33, 0, 32, 10, 31.4, 10, 28.4, 19, 26.9, 19, 17.9, 29, 15.5, 29, 10.3, 32, -3.8147e-06, 32.6115, -10.7, 32, -22.7591, 24.4586, -19, 26.9, -29, 17.9, -29, 15.5, -32, 10.3, -32, -11.9, -30.4, -16, -27, -23, -17.9, -29, -15.3, -29, -10, -31.3, -10, -32, 3, -33)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_6suun")
 
 [connection signal="input_event" from="." to="." method="_on_DragableTile_input_event"]

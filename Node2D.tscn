@@ -52,9 +52,6 @@ text = "AddBackGround"
 layout_mode = 2
 text = "Add Pice"
 
-[node name="Button4" type="Button" parent="CanvasLayer/Panel/VBoxContainer"]
-layout_mode = 2
-
 [node name="HSlider" type="HSlider" parent="CanvasLayer/Panel/VBoxContainer"]
 layout_mode = 2
 min_value = 0.5
@@ -70,7 +67,17 @@ material = SubResource("3")
 layout_mode = 2
 theme_override_styles/panel = SubResource("4")
 
+[node name="host" type="Button" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Host"
+
+[node name="join" type="Button" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Join"
+
 [connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/Button3" to="." method="_on_Button3_pressed"]
 [connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="value_changed" from="CanvasLayer/Panel/VBoxContainer/HSlider" to="." method="_on_HSlider_value_changed"]
 [connection signal="item_selected" from="CanvasLayer/Panel/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/join" to="." method="_on_join_pressed"]
